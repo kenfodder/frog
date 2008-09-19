@@ -1,3 +1,40 @@
 * {font-family:verdana;}
 
+textarea {width:600px; height:300px;}
+input {width:600px;}
+
 #nav {margin-bottom:15px;}
+
+
+/* Syntax highlighting */
+#content .normal {}
+#content .comment { color: #CCC; font-style: italic; border: none; margin: none; }
+#content .keyword { color: #C60; font-weight: bold; }
+#content .method { color: #9FF; }
+#content .class { color: #074; }
+#content .module { color: #050; }
+#content .punct { color: #0D0; font-weight: bold; }
+#content .symbol { color: #099; }
+#content .string { color: #C03; }
+#content .char { color: #F07; }
+#content .ident { color: #0D0; }
+#content .constant { color: #07F; }
+#content .regex { color: #B66; }
+#content .number { color: #FF0; }
+#content .attribute { color: #7BB; }
+#content .global { color: #7FB; }
+#content .expr { color: #909; }
+#content .escape { color: #277; }
+#content .syntax {
+  background-color: #333;
+  padding: 2px;
+  margin: 5px;
+  margin-left: 1em;
+  margin-bottom: 1em;
+}
+#content .syntax .line_number {
+  text-align: right;
+  font-family: monospace;
+  padding-right: 1em;
+  color: #999;
+}

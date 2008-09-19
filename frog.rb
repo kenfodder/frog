@@ -19,8 +19,8 @@ get '/new' do
 end
 
 post '/create' do
-  @blog.entries.create(:text => params[:text])
-  redirect '/'
+  entry = @blog.entries.create(:title => params[:title], :text => params[:text])
+  redirect "/#{entry.id}"
 end
 
 get '/:id' do
