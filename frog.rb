@@ -24,7 +24,7 @@ post '/create' do
 end
 
 get '/:id' do
-  @entry = Entry.find(params[:id])
+  @entry = @blog.entries.find(params[:id])
   erb :entry
 end
 
