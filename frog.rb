@@ -11,7 +11,7 @@ end
 
 before do
   if request.path_info =~ /admin/ and !logged_in?
-    session['forward'] = request.path_info
+    session['forward'] = request.path_info + (request.query_string.blank? ? '' : '?' + request.query_string)
     redirect '/login'
   end
   @blog = Blog.find(:first)

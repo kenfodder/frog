@@ -1,11 +1,11 @@
 <h2>
-    <% if @entry.url %>
+    <% unless @entry.url.blank? %>
         <%= link_to @entry.title, @entry.url %>
     <% else %>
         <%= @entry.title %>
     <% end %>
 </h2>
-<% if @entry.url %>
+<% unless @entry.url.blank? %>
     <p style="margin-top:-20px"><small><%= @entry.short_uri %></small></p>
 <% end %>
 

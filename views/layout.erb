@@ -12,10 +12,10 @@
 
 <body>
 
-<h1><%= @blog.title %></h1>
+<h1><%= link_to @blog.title, '/' %></h1>
     
 <div id="nav">
-    <a href="/">Home</a> | <a href="/admin">Admin</a> <% if logged_in? %>| <a href="/admin/new">Create</a> | <a href="/logout">Logout</a><% end %>
+    <% if logged_in? %>| <a href="/admin/new">Create</a> | <a href="/logout">Logout</a><% end %>
 </div>
 
 <div id="content">
