@@ -5,7 +5,8 @@ By default frog uses sqlite3 as the data store, but you can use anything that Ac
 
 h2. Dependencies
 
-* gem install sinatra active_record sqlite3-ruby RedCloth syntaxi
+* gem install sinatra activerecord RedCloth syntaxi
+* gem install sqlite3-ruby # if you're using sqlite3
 
 h2. Installing and Running
 
