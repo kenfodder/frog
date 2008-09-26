@@ -9,6 +9,7 @@ class Schema < ActiveRecord::Migration
     create_table :entries do |t|
       t.integer :blog_id
       t.string  :title
+      t.string  :url
       t.text    :text
       t.timestamps
     end unless ActiveRecord::Base.connection.tables.include?('entries')

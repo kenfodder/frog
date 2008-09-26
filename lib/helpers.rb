@@ -1,5 +1,50 @@
 module Helpers
+  
+  def logged_in?
+    session[:user]
+  end
+  
+  def partial(name, options={})
+    erb("_#{name.to_s}".to_sym, options.merge(:layout => false))
+  end
 
+  def image_tag(file, options={})
+    tag = "<img src='/images/#{file}'"
+    if options[:alt]
+      tag += " alt='#{options[:alt]}' title='#{options[:alt]}' "
+    end
+    tag += "/>"
+  end
+
+  def link_to(text, link='#')
+    "<a href='#{link}'>#{text}</a>"
+  end
+  
+  def scrape_page_title(url)
+    page_title = /<title>\s*(.*)\s*<\/title>/i
+    begin
+      page_content = Timeout.timeout(5) {
+        fetch(url).body.to_s
+      }
+      matches = page_content.match(page_title)
+      matches[1] if matches || nil
+    rescue Exception => e
+      url
+    end
+  end
+
+  def fetch(uri_str, limit = 3)
+    return false if limit == 0
+
+    response = Net::HTTP.get_response(URI.parse(uri_str))
+    case response
+    when Net::HTTPSuccess     then response
+    when Net::HTTPRedirection then fetch(response['location'], limit - 1)
+    else
+      return false
+    end
+  end
+  
   def time_ago_or_time_stamp(from_time, to_time = Time.now, include_seconds = true, detail = false)
     from_time = from_time.to_time if from_time.respond_to?(:to_time)
     to_time = to_time.to_time if to_time.respond_to?(:to_time)

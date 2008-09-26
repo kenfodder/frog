@@ -1,4 +1,5 @@
-* {font-family:verdana;}
+body {font-family: verdana;}
+code {font-family:"Bitstream Vera Sans Mono","Monaco","Courier",monospace;}
 
 textarea {width:600px; height:300px;}
 input {width:600px;}
@@ -26,15 +27,15 @@ input {width:600px;}
 #content .expr { color: #909; }
 #content .escape { color: #277; }
 #content .syntax {
-  background-color: #333;
-  padding: 2px;
-  margin: 5px;
-  margin-left: 1em;
-  margin-bottom: 1em;
+  font-size:9pt;
+  letter-spacing:0;
+  line-height:1.3em;
+  margin-bottom:0;
+  position:relative;
+  white-space:pre;
 }
 #content .syntax .line_number {
   text-align: right;
-  font-family: monospace;
   padding-right: 1em;
   color: #999;
 }
