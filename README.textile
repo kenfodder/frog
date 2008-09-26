@@ -1,21 +1,18 @@
 h1. Frog
 
 Frog will be a full-featured blog application written using the sinatra web framework.  It's still in early development.
+By default frog uses sqlite3 as the data store, but you can use anything that ActiveRecord supports, configure this in lib/models.rb.
+
+h2. Dependencies
+
+* gem install sinatra active_record sqlite3-ruby RedCloth syntaxi
 
 h2. Installing and Running
-
-* gem install sinatra        # the tiny web framework
-* gem install active_record  # my orm of choice
-* gem install sqlite3-ruby   # the default data store
-* gem install RedCloth       # textile markup processor
-* gem install syntaxi        # code syntax formatting
 
 * git clone git://github.com/moomerman/frog.git
 * cd frog
 * rake frog:init
 * ./frog.rb
-# go to http://localhost:4567/
-
-By default frog uses sqlite3 as the data store, but you can use anything that ActiveRecord supports, configure this in lib/models.rb.
+* go to http://localhost:4567/
 
 To create a new blog entry you need to go to /admin and login with admin:admin.
