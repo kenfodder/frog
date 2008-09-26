@@ -5,11 +5,11 @@ textarea {width:600px; height:300px;}
 input {width:600px;}
 
 #nav {margin-bottom:15px;}
-
+#footer {font-size:0.7em; margin-top:20px;}
 
 /* Syntax highlighting */
 #content .normal {}
-#content .comment { color: #CCC; font-style: italic; border: none; margin: none; }
+#content .comment { color: #CCC; font-style: italic; border: none; margin: 0; }
 #content .keyword { color: #C60; font-weight: bold; }
 #content .method { color: #9FF; }
 #content .class { color: #074; }
@@ -27,15 +27,18 @@ input {width:600px;}
 #content .expr { color: #909; }
 #content .escape { color: #277; }
 #content .syntax {
+  width:650px;
+  background-color: #333;
+  padding: 2px;
+  margin: 5px;
+  margin-left: 1em;
   font-size:9pt;
   letter-spacing:0;
   line-height:1.3em;
-  margin-bottom:0;
-  position:relative;
-  white-space:pre;
 }
 #content .syntax .line_number {
   text-align: right;
+  padding-left: 1em;
   padding-right: 1em;
   color: #999;
 }
