@@ -59,7 +59,7 @@ post '/admin/create' do
     :url => params[:url],
     :text => params[:text]
   )
-  redirect "/#{entry.id}"
+  redirect "/perm/#{entry.id}"
 end
 
 get '/admin/bookmark' do
