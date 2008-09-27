@@ -10,18 +10,15 @@ module Helpers
 
   def image_tag(file, options={})
     tag = "<img src='/images/#{file}'"
-    if options[:alt]
-      tag += " alt='#{options[:alt]}' title='#{options[:alt]}' "
-    end
+    tag += " alt='#{options[:alt]}' title='#{options[:alt]}' " if options[:alt]
     tag += "/>"
   end
 
   def link_to(text, link='#', options = {})
-    o = ''
-    if options[:class]
-      o = "class = \"#{options[:class]}\""
-    end
-    "<a href='#{link}'#{o}>#{text}</a>"
+    tag = "<a href='#{link}'"
+    tag += " class=\"#{options[:class]}\"" if options[:class]
+    tag += " target=\"#{options[:target]}\"" if options[:target]
+    tag += ">#{text}</a>"
   end
   
   def scrape_page_title(url)

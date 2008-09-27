@@ -15,9 +15,11 @@
 
 <h1><%= link_to @blog.title, '/' %></h1>
     
-<div id="nav">
-    <% if logged_in? %><a href="/admin">Admin</a> | <%= link_to('New Entry', '/admin/new') %> | <a href="/logout">Logout</a><% end %>
-</div>
+<% if logged_in? %>
+    <div id="nav">
+        <a href="/admin">Admin</a> | <%= link_to('New Entry', '/admin/new') %> | <a href="/logout">Logout</a>
+    </div>
+<% end %>
 
 <div id="content">
     <%= yield %>

@@ -2,7 +2,6 @@
 
 <div class="post">
 	
-	
 	<div class="date">
 	    <% if prev_date != entry.created_at.strftime("%a%d%Y") %>
 		    <div class="date_brick">
@@ -13,7 +12,6 @@
     	<% end %>
     	<div style="font-size:0.4em"><%= link_to(entry.created_at.strftime("%H:%M"), "/perm/#{entry.id}") %></div>
 	</div>
-    
 
     <% unless entry.url.blank? %>
         <div class="link">

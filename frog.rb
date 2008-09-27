@@ -17,11 +17,17 @@ before do
   @blog = Blog.find(:first)
 end
 
+helpers do
+  include Helpers
+end
+
+# Main Blog action
 get '/' do
   @entries = @blog.entries
   erb :blog
 end
 
+# Permalink Entry action
 get '/perm/:id' do
   @entry = @blog.entries.find(params[:id])
   erb :entry
@@ -32,6 +38,7 @@ get '/login' do
 end
 
 post '/login' do
+  # TODO: store the hashed password on the blog model
   if params[:username] == 'admin' and params['password'] == 'admin'
     session[:user] = true
     redirect session['forward'] || '/'
@@ -44,6 +51,8 @@ get '/logout' do
   session[:user] = nil
   redirect '/'
 end
+
+# -- Admin actions (require login)
 
 get '/admin' do
   @entries = @blog.entries
@@ -63,6 +72,8 @@ post '/admin/create' do
   redirect "/perm/#{entry.id}"
 end
 
+# For use by the bookmarklet
+# http://blog/admin/bookmark?url=http://somewhere.com/
 get '/admin/bookmark' do
   url = params[:url]
   title = scrape_page_title(url)
@@ -71,8 +82,4 @@ get '/admin/bookmark' do
     :url => url
   )
   redirect url
-end
-
-helpers do
-  include Helpers
 end
