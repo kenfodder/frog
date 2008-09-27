@@ -22,6 +22,14 @@ namespace :frog do
         :title => 'Welcome to Frog!',
         :text => '!http://www1.istockphoto.com/file_thumbview_approve/1073907/2/istockphoto_1073907-frog-cartoon.jpg!'
       )
+      blog.entries.create(
+        :title => 'Code Sample',
+        :text => "[code]def frog\n  puts 'Welcome to Frog'\nend[/code]"
+      )
+      blog.entries.create(
+        :title => 'moomerman\'s frog at master - GitHub',
+        :url => "http://github.com/moomerman/frog/tree/master"
+      )
     end
   end
   

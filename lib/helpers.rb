@@ -16,8 +16,12 @@ module Helpers
     tag += "/>"
   end
 
-  def link_to(text, link='#')
-    "<a href='#{link}'>#{text}</a>"
+  def link_to(text, link='#', options = {})
+    o = ''
+    if options[:class]
+      o = "class = \"#{options[:class]}\""
+    end
+    "<a href='#{link}'#{o}>#{text}</a>"
   end
   
   def scrape_page_title(url)

@@ -1,26 +1,29 @@
-<div class="post">
-							
-	<div class="date">
-		<div class="date_brick">
-			Sep<br/>
-        	26
-    	</div>
-    	Fri
-	</div>
+<% prev_date ||= '' %>
 
-    <h2>
-        <% unless entry.url.blank? %>
-            <%= link_to entry.title, entry.url %>
-        <% else %>
-            <%= entry.title %>
-        <% end %>
-    </h2>
+<div class="post">
+	
+	
+	<div class="date">
+	    <% if prev_date != entry.created_at.strftime("%a%d%Y") %>
+		    <div class="date_brick">
+    			<%= entry.created_at.strftime("%b") %><br/>
+            	<%= entry.created_at.strftime("%d") %>
+        	</div>
+        	<%= entry.created_at.strftime("%a") %>
+    	<% end %>
+    	<div style="font-size:0.4em"><%= link_to(entry.created_at.strftime("%H:%M"), "/perm/#{entry.id}") %></div>
+	</div>
+    
+
     <% unless entry.url.blank? %>
-        <p style="margin-top:-20px"><small><%= entry.short_uri %></small></p>
+        <div class="link">
+            <%= link_to entry.title, entry.url, :class => 'link' %>
+        </div>
+        <p style="margin-top:-2px;"><small><%= entry.short_uri %></small></p>
+    <% else %>
+        <h2><%= entry.title %></h2>
     <% end %>
 
     <%= entry.html %>
-
-    <small><%= link_to(entry.created_at, "/perm/#{entry.id}") %></small>
 
 </div>
