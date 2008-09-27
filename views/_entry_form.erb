@@ -1,3 +1,8 @@
-<p><b>Title</b> <input type="text" name="title" value="<%= @entry.title %>" /></p>
-<p><b>URL?</b> <input type="text" name="url" value="<%= @entry.url %>" /></p>
-<p><b>Text</b> <textarea name="text"><%= @entry.text %></textarea></p>
+<p><b>Title</b> <input type="text" name="title" value="<%= @entry.title %>" class="text_input" /></p>
+<p><b>URL?</b> <input type="text" name="url" value="<%= @entry.url %>" class="text_input" /></p>
+<p>
+    <b>Body</b> 
+    <a href="http://hobix.com/textile/quick.html" target="_new">Textile Enabled</a>
+    for syntax use: [code]...[/code]
+    <textarea name="text"><%= @entry.text %></textarea>
+</p>

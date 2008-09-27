@@ -1,4 +1,6 @@
+<h2>Edit Entry</h2>
+
 <form action="/admin/update/<%= @entry.id %>" method="post">
     <%= partial :entry_form %>
-    <p><input type="submit" value="update"/></p>
+    <p><input type="submit" value="update"/> <input type="button" value="cancel" onclick="location.href='/admin'"/></p>
 </form>
