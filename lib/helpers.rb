@@ -18,6 +18,7 @@ module Helpers
     tag = "<a href='#{link}'"
     tag += " class=\"#{options[:class]}\"" if options[:class]
     tag += " target=\"#{options[:target]}\"" if options[:target]
+    tag += " onclick=\"#{options[:onclick]}\"" if options[:onclick]
     tag += ">#{text}</a>"
   end
   

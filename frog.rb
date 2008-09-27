@@ -60,7 +60,24 @@ get '/admin' do
 end
 
 get '/admin/new' do
+  @entry = Entry.new
   erb :new
+end
+
+get '/admin/update/:id' do
+  @entry = @blog.entries.find(params[:id])
+  erb :update
+end
+
+post '/admin/update/:id' do
+  entry = @blog.entries.find(params[:id])
+  entry.update_attributes(:title => params[:title], :url => params[:url], :text => params[:text])
+  redirect "/perm/#{entry.id}"
+end
+
+get '/admin/destroy/:id' do
+  @blog.entries.find(params[:id]).destroy
+  redirect '/admin'
 end
 
 post '/admin/create' do

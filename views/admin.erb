@@ -5,7 +5,11 @@
 <p><%= link_to('New Entry', '/admin/new') %></p>
 
 <% @entries.each do |entry| %>
-    <p><a href="/perm/<%= entry.id %>"><%= entry.title %></a> <small>(<%= time_ago_or_time_stamp(entry.created_at) %>)</small></p>
+    <p>
+        <a href="/perm/<%= entry.id %>"><%= entry.title %></a> <small>(<%= time_ago_or_time_stamp(entry.created_at) %>)</small>
+        <%= link_to 'Edit', "/admin/update/#{entry.id}" %> | 
+        <%= link_to 'Delete', "/admin/destroy/#{entry.id}", :onclick => "return confirm('Are you sure?');" %>
+    </p>
 <% end %>
 
 

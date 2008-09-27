@@ -1,6 +1,4 @@
 <form action="/admin/create" method="post">
-    <p><b>Title</b> <input type="text" name="title"/></p>
-    <p><b>URL?</b> <input type="text" name="url"/></p>
-    <p><b>Text</b> <textarea name="text"></textarea></p>
+    <%= partial :entry_form %>
     <p><input type="submit" value="create"/></p>
 </form>
