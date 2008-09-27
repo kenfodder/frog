@@ -2,6 +2,15 @@
 
 <p><b>Blog Title</b> <%= @blog.title %></p>
 
+<p><%= link_to('New Entry', '/admin/new') %></p>
+
+<% @entries.each do |entry| %>
+    <p><a href="/perm/<%= entry.id %>"><%= entry.title %></a> <small>(<%= time_ago_or_time_stamp(entry.created_at) %>)</small></p>
+<% end %>
+
+
+<h2>TODO</h2>
+
 <p>Google analytics code</p>
 <p>Keywords & Description</p>
 <p>Any rhc widgets</p>

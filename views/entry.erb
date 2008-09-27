@@ -1,16 +1,3 @@
 <% @title = @entry.title %>
 
-<h2>
-    <% unless @entry.url.blank? %>
-        <%= link_to @entry.title, @entry.url %>
-    <% else %>
-        <%= @entry.title %>
-    <% end %>
-</h2>
-<% unless @entry.url.blank? %>
-    <p style="margin-top:-20px"><small><%= @entry.short_uri %></small></p>
-<% end %>
-
-<%= @entry.html %>
-
-<small><%= @entry.created_at %></small>
+<%= partial(:entry, :locals => {:entry => @entry}) %>

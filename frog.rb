@@ -46,6 +46,7 @@ get '/logout' do
 end
 
 get '/admin' do
+  @entries = @blog.entries
   erb :admin
 end
 
