@@ -1,6 +1,6 @@
 h1. Frog
 
-Frog will be a full-featured blog application written using the sinatra web framework.  It's still in early development.
+Frog is a full-featured blog application written using the sinatra web framework.
 By default frog uses sqlite3 as the data store, but you can use anything that ActiveRecord supports, configure this in lib/models.rb.
 
 h2. Dependencies
